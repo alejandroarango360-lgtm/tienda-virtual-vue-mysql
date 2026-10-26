@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categorías | Catálogo</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================
+           COLORES DE LA MARCA
+        ========================= */
+
+        :root {
+            --fondo-principal: #08141D;
+            --fondo-tarjeta: #0F202B;
+            --azul-principal: #4B91B8;
+            --azul-menu: #16303F;
+            --azul-separacion: #294352;
+            --texto-principal: #F5F7F9;
+            --texto-secundario: #BBC4CC;
+        }
+
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--fondo-principal);
+            color: var(--texto-principal);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: var(--azul-menu);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+            border-bottom: 1px solid var(--azul-separacion);
+        }
+
+        .marca {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .marca span {
+            font-family: 'Lora', serif;
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--texto-principal);
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: var(--texto-principal);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--azul-principal);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--azul-principal);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+        .btn-whatsapp:hover {
+            color: white;
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        .titulo-categorias {
+            text-align: center;
+            padding: 70px 20px 45px;
+        }
+
+        .titulo-categorias h1 {
+            font-family: 'Lora', serif;
+            font-size: 45px;
+            color: var(--azul-principal);
+            margin-bottom: 15px;
+        }
+
+        .titulo-categorias p {
+            color: var(--texto-secundario);
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           CATEGORÍAS
+        ========================= */
+
+        .categorias {
+            width: 86%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+
+            padding-bottom: 80px;
+        }
+
+
+        /* =========================
+           TARJETA
+        ========================= */
+
+        .categoria {
+            background-color: var(--fondo-tarjeta);
+            border: 1px solid var(--azul-separacion);
+            border-radius: 8px;
+            overflow: hidden;
+
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .categoria:hover {
+            transform: translateY(-6px);
+            border-color: var(--azul-principal);
+        }
+
+
+        /* =========================
+           IMAGEN
+        ========================= */
+
+        .imagen-categoria {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+            background-color: var(--azul-menu);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagen-categoria img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+
+        /* =========================
+           INFORMACIÓN TARJETA
+        ========================= */
+
+        .info-categoria {
+            padding: 22px;
+            text-align: center;
+        }
+
+        .info-categoria h2 {
+            font-family: 'Lora', serif;
+            font-size: 23px;
+            margin-bottom: 10px;
+            color: var(--texto-principal);
+        }
+
+        .info-categoria p {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           BOTÓN
+        ========================= */
+
+        .btn-ver {
+            display: inline-block;
+
+            background-color: var(--azul-principal);
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 22px;
+            border-radius: 5px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-ver:hover {
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
+
+        .whatsapp-flotante {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 55px;
+            height: 55px;
+
+            background-color: var(--azul-principal);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 25px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: var(--azul-menu);
+
+            border-top: 1px solid var(--azul-separacion);
+
+            padding: 45px 7% 25px;
+        }
+
+        .footer-contenido {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: var(--texto-principal);
+            margin-bottom: 12px;
+        }
+
+        .footer-texto {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        footer h3 {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+        }
+
+        footer a {
+            color: var(--texto-secundario);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: var(--azul-principal);
+        }
+
+        .copyright {
+            text-align: center;
+
+            margin-top: 35px;
+            padding-top: 20px;
+
+            border-top: 1px solid var(--azul-separacion);
+
+            color: var(--texto-secundario);
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE - TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .categorias {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+        }
+
+
+        /* =========================
+           RESPONSIVE - CELULAR
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 70px;
+                padding: 0 6%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .titulo-categorias {
+                padding: 50px 20px 35px;
+            }
+
+            .titulo-categorias h1 {
+                font-size: 34px;
+            }
+
+            .titulo-categorias p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .categorias {
+                width: 88%;
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding-bottom: 60px;
+            }
+
+            .imagen-categoria {
+                height: 210px;
+            }
+
+            .footer-contenido {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            footer {
+                padding: 40px 8% 20px;
+            }
+
+            .whatsapp-flotante {
+                width: 50px;
+                height: 50px;
+                right: 18px;
+                bottom: 18px;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <img src="imagenes/logo_centrado.jpg" class="logo" alt="Logo NOVHA">
+        <span>NOVHA</span>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Catálogo</a>
+            <a href="#">Personaliza</a>
+            <a href="#">Nosotros</a>
+
+            <a href="#" class="btn-whatsapp">
+                WhatsApp
+            </a>
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         TÍTULO
+    ========================== -->
+
+    <section class="titulo-categorias">
+
+        <h1>Categorías</h1>
+
+        <p>
+            Explora nuestros productos y encuentra lo que necesitas.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORÍAS
+    ========================== -->
+
+    <main class="categorias">
+
+
+        <!-- CHAQUETAS -->
+
+    <!-- CHAQUETAS -->
+<article class="categoria">
+    <div class="imagen-categoria">
+        <img src="imagenes/Chaqueta.jpg" alt="Chaquetas">
+    </div>
+    <div class="info-categoria">
+        <h2>Chaquetas</h2>
+        <p>Chaquetas para trabajo y uso diario.</p>
+
+        <a href="chaquetas.html" class="btn-ver">
+            Ver productos
+        </a>
+    </div>
+</article>
+
+
+        <!-- OVEROLES -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                <img src="imagenes/Overol.jpg" alt="Overoles">
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Overoles</h2>
+
+                <p>
+                    Prendas resistentes pensadas para el trabajo.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- RUANAS -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                <img src="imagenes/Ruana.jpg" alt="Ruanas">
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Ruanas</h2>
+
+                <p>
+                    Ruanas para protegerte y mantenerte cómodo.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- BORDADOS -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                <img src="imagenes/Bordados.jpg" alt="Bordados">
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Bordados</h2>
+
+                <p>
+                    Bordados personalizados para darle identidad a tus prendas.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- COJINES -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                <img src="imagenes/Cojines.jpg" alt="Overoles">
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Cojines</h2>
+
+                <p>
+                    Diseños y bordados personalizados para tus espacios.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRENDAS -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                <img src="imagenes/Prendas.jpg" alt="Prendas">
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Prendas</h2>
+
+                <p>
+                    Diferentes prendas para complementar tu estilo.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- BOTAS -->
+
+        <article class="categoria">
+
+            <div class="imagen-categoria">
+                IMAGEN BOTAS
+            </div>
+
+            <div class="info-categoria">
+
+                <h2>Botas</h2>
+
+                <p>
+                    Calzado resistente para acompañarte en el trabajo.
+                </p>
+
+                <a href="#" class="btn-ver">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </main>
+
+
+    <!-- =========================
+         WHATSAPP
+    ========================== -->
+
+    <a href="#" class="whatsapp-flotante" title="WhatsApp">
+        W
+    </a>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-contenido">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    <img src="imagenes/logo_centrado.jpg" alt="Logo">
+                </div>
+
+                <p class="footer-texto">
+                    Productos para el trabajo y productos
+                    personalizados para nuestra comunidad.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Catálogo</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Overoles</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Chaquetas</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Cojines</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Bordados</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contacto</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">Nosotros</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Ubicación</a>
+                    </li>
+
+                    <li>
+                        <a href="#">WhatsApp</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 - Todos los derechos reservados
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

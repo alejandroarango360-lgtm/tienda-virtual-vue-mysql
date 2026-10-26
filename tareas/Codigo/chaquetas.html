@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chaquetas | NOVHA</title>
+
+
+    <!-- FUENTES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+
+
+        /* =========================================
+           COLORES DE LA MARCA
+        ========================================= */
+
+        :root {
+
+            --fondo-principal: #08141D;
+
+            --fondo-tarjeta: #0F202B;
+
+            --azul-principal: #4B91B8;
+
+            --azul-menu: #16303F;
+
+            --azul-separacion: #294352;
+
+            --texto-principal: #F5F7F9;
+
+            --texto-secundario: #BBC4CC;
+
+        }
+
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            background-color: var(--fondo-principal);
+
+            color: var(--texto-principal);
+
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+
+            width: 100%;
+
+            height: 80px;
+
+            background-color: var(--azul-menu);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            border-bottom: 1px solid var(--azul-separacion);
+
+        }
+
+
+        .logo img {
+
+            height: 45px;
+
+            width: auto;
+
+            display: block;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+
+        nav a {
+
+            color: var(--texto-principal);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--azul-principal);
+
+        }
+
+
+        .btn-whatsapp {
+
+            background-color: var(--azul-principal);
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 5px;
+
+        }
+
+
+        /* =========================================
+           TÍTULO DE LA PÁGINA
+        ========================================= */
+
+        .titulo {
+
+            text-align: center;
+
+            padding: 65px 20px 45px;
+
+        }
+
+
+        .titulo h1 {
+
+            font-family: 'Lora', serif;
+
+            color: var(--azul-principal);
+
+            font-size: 46px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .titulo p {
+
+            color: var(--texto-secundario);
+
+            font-size: 16px;
+
+        }
+
+
+        /* =========================================
+           PRODUCTO PRINCIPAL
+        ========================================= */
+
+        .producto-principal {
+
+            width: 86%;
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =========================================
+           IMAGEN PRINCIPAL
+        ========================================= */
+
+        .imagen-principal {
+
+            width: 100%;
+
+            height: 450px;
+
+            background-color: var(--fondo-tarjeta);
+
+            border: 1px solid var(--azul-separacion);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+        }
+
+
+        .imagen-principal img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        /* =========================================
+           INFORMACIÓN DEL PRODUCTO
+        ========================================= */
+
+        .informacion {
+
+            padding: 20px;
+
+        }
+
+
+        .informacion h2 {
+
+            font-family: 'Lora', serif;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+
+            color: var(--texto-principal);
+
+        }
+
+
+        .informacion p {
+
+            color: var(--texto-secundario);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* =========================================
+           CARACTERÍSTICAS
+        ========================================= */
+
+        .caracteristicas {
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .caracteristicas p {
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+        }
+
+
+        .caracteristicas span {
+
+            color: var(--azul-principal);
+
+            font-weight: 600;
+
+        }
+
+
+        /* =========================================
+           BOTÓN
+        ========================================= */
+
+        .btn-personalizar {
+
+            display: inline-block;
+
+            background-color: var(--azul-principal);
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 25px;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn-personalizar:hover {
+
+            opacity: 0.85;
+
+        }
+
+
+        /* =========================================
+           SECCIÓN DISEÑOS
+        ========================================= */
+
+        .disenos {
+
+            width: 86%;
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        .disenos-titulo {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .disenos-titulo h2 {
+
+            font-family: 'Lora', serif;
+
+            font-size: 30px;
+
+            color: var(--texto-principal);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .disenos-titulo p {
+
+            color: var(--texto-secundario);
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================
+           GALERÍA
+        ========================================= */
+
+        .galeria {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .tarjeta-diseno {
+
+            background-color: var(--fondo-tarjeta);
+
+            border: 1px solid var(--azul-separacion);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+        }
+
+
+        .tarjeta-diseno .imagen {
+
+            width: 100%;
+
+            height: 250px;
+
+            background-color: var(--azul-menu);
+
+            overflow: hidden;
+
+        }
+
+
+        .tarjeta-diseno .imagen img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .tarjeta-diseno h3 {
+
+            font-family: 'Lora', serif;
+
+            font-size: 19px;
+
+            padding: 18px 18px 5px;
+
+        }
+
+
+        .tarjeta-diseno p {
+
+            color: var(--texto-secundario);
+
+            font-size: 13px;
+
+            padding: 0 18px 20px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================================
+           LLAMADO A LA ACCIÓN
+        ========================================= */
+
+        .cta {
+
+            width: 86%;
+
+            max-width: 1150px;
+
+            margin: 0 auto 80px;
+
+            padding: 55px 30px;
+
+            text-align: center;
+
+            background-color: var(--fondo-tarjeta);
+
+            border: 1px solid var(--azul-separacion);
+
+            border-radius: 8px;
+
+        }
+
+
+        .cta h2 {
+
+            font-family: 'Lora', serif;
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .cta p {
+
+            color: var(--texto-secundario);
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* =========================================
+           WHATSAPP FLOTANTE
+        ========================================= */
+
+        .whatsapp-flotante {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 55px;
+
+            height: 55px;
+
+            background-color: var(--azul-principal);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 24px;
+
+            z-index: 10;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background-color: var(--azul-menu);
+
+            border-top: 1px solid var(--azul-separacion);
+
+            padding: 45px 7% 25px;
+
+        }
+
+
+        .footer-contenido {
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 40px;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+
+        .footer-logo {
+
+            font-family: 'Lora', serif;
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .footer-texto {
+
+            color: var(--texto-secundario);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        footer h3 {
+
+            font-size: 15px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        footer ul {
+
+            list-style: none;
+
+        }
+
+
+        footer li {
+
+            margin-bottom: 9px;
+
+        }
+
+
+        footer a {
+
+            color: var(--texto-secundario);
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+        }
+
+
+        footer a:hover {
+
+            color: var(--azul-principal);
+
+        }
+
+
+        .copyright {
+
+            text-align: center;
+
+            margin-top: 35px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid var(--azul-separacion);
+
+            color: var(--texto-secundario);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .producto-principal {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .galeria {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* =========================================
+           CELULAR
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                height: 70px;
+
+                padding: 0 6%;
+
+            }
+
+
+            .logo img {
+
+                height: 40px;
+
+            }
+
+
+            nav {
+
+                display: none;
+
+            }
+
+
+            .titulo {
+
+                padding: 50px 20px 35px;
+
+            }
+
+
+            .titulo h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .titulo p {
+
+                font-size: 14px;
+
+                line-height: 1.5;
+
+            }
+
+
+            .producto-principal {
+
+                width: 88%;
+
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                padding-bottom: 60px;
+
+            }
+
+
+            .imagen-principal {
+
+                height: 330px;
+
+            }
+
+
+            .informacion {
+
+                padding: 5px;
+
+            }
+
+
+            .informacion h2 {
+
+                font-size: 27px;
+
+            }
+
+
+            .informacion p {
+
+                font-size: 14px;
+
+            }
+
+
+            .galeria {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .disenos {
+
+                width: 88%;
+
+            }
+
+
+            .cta {
+
+                width: 88%;
+
+                padding: 45px 20px;
+
+            }
+
+
+            .cta h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            .footer-contenido {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 30px;
+
+            }
+
+
+            footer {
+
+                padding: 40px 8% 20px;
+
+            }
+
+
+            .whatsapp-flotante {
+
+                width: 50px;
+
+                height: 50px;
+
+                right: 18px;
+
+                bottom: 18px;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="Imagenes/logo_centrado.jpg" alt="Logo NOVHA">
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">Inicio</a>
+
+            <a href="categorias.html">Catálogo</a>
+
+            <a href="#">Personaliza</a>
+
+            <a href="#">Nosotros</a>
+
+            <a href="#" class="btn-whatsapp">
+                WhatsApp
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         TÍTULO
+    ========================================== -->
+
+    <section class="titulo">
+
+        <h1>Chaquetas</h1>
+
+        <p>
+            Diseñadas para acompañarte en cada jornada.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PRODUCTO PRINCIPAL
+    ========================================== -->
+
+    <section class="producto-principal">
+
+
+        <div class="imagen-principal">
+
+            <img
+                src="Imagenes/Chaqueta 4.jpg"
+                alt="Chaqueta NOVHA"
+            >
+
+        </div>
+
+
+        <div class="informacion">
+
+            <h2>
+                Chaquetas
+            </h2>
+
+
+            <p>
+                Encuentra chaquetas pensadas para ofrecer
+                comodidad, resistencia y estilo. También
+                puedes personalizarlas según tus necesidades.
+            </p>
+
+
+            <div class="caracteristicas">
+
+                <p>
+                    <span>✓</span>
+                    Materiales resistentes
+                </p>
+
+                <p>
+                    <span>✓</span>
+                    Diseños funcionales
+                </p>
+
+                <p>
+                    <span>✓</span>
+                    Diferentes estilos
+                </p>
+
+                <p>
+                    <span>✓</span>
+                    Opción de personalización
+                </p>
+
+            </div>
+
+
+            <a href="#" class="btn-personalizar">
+                Personalizar chaqueta
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         DISEÑOS
+    ========================================== -->
+
+    <section class="disenos">
+
+
+        <div class="disenos-titulo">
+
+            <h2>
+                Nuestros diseños
+            </h2>
+
+            <p>
+                Conoce algunos de nuestros modelos de chaquetas.
+            </p>
+
+        </div>
+
+
+
+        <div class="galeria">
+
+
+            <!-- DISEÑO 1 -->
+
+            <article class="tarjeta-diseno">
+
+                <div class="imagen">
+
+                    <img
+                        src="Imagenes/Chaqueta 1.jpg"
+                        alt="Chaqueta modelo 1"
+                    >
+
+                </div>
+
+                <h3>
+                    Chaqueta clásica
+                </h3>
+
+                <p>
+                    Diseño cómodo y funcional para el día a día.
+                </p>
+
+            </article>
+
+
+
+            <!-- DISEÑO 2 -->
+
+            <article class="tarjeta-diseno">
+
+                <div class="imagen">
+
+                    <img
+                        src="Imagenes/Chaqueta 2.jpg"
+                        alt="Chaqueta modelo 2"
+                    >
+
+                </div>
+
+                <h3>
+                    Chaqueta personalizada
+                </h3>
+
+                <p>
+                    Personaliza tu chaqueta con diseños y bordados.
+                </p>
+
+            </article>
+
+
+
+            <!-- DISEÑO 3 -->
+
+            <article class="tarjeta-diseno">
+
+                <div class="imagen">
+
+                    <img
+                        src="Imagenes/Chaqueta 3.jpg"
+                        alt="Chaqueta modelo 3"
+                    >
+
+                </div>
+
+                <h3>
+                    Chaqueta de trabajo
+                </h3>
+
+                <p>
+                    Una opción pensada para acompañarte durante
+                    tus jornadas de trabajo.
+                </p>
+
+            </article>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         CTA
+    ========================================== -->
+
+    <section class="cta">
+
+        <h2>
+            ¿Quieres personalizar tu chaqueta?
+        </h2>
+
+        <p>
+            Cuéntanos tu idea y te ayudamos a hacerla realidad.
+        </p>
+
+        <a href="#" class="btn-personalizar">
+            Hablar con nosotros
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         WHATSAPP
+    ========================================== -->
+
+    <a
+        href="#"
+        class="whatsapp-flotante"
+        title="WhatsApp"
+    >
+        W
+    </a>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+
+        <div class="footer-contenido">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    NOVHA
+                </div>
+
+                <p class="footer-texto">
+                    Productos para el trabajo y productos
+                    personalizados para nuestra comunidad.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Catálogo
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="categorias.html">
+                            Categorías
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="chaquetas.html">
+                            Chaquetas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Overoles
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Cojines
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contacto
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Ubicación
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            WhatsApp
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Instagram
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 - Todos los derechos reservados
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>
